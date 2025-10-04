@@ -57,7 +57,7 @@ def retrieve_versions_data():
 
 def write_vars_file(data, file_path):
     logger.info(f'Writing vars file at {file_path} ...')
-    vars_data_in_yaml = yaml.dump(data)
+    vars_data_in_yaml = yaml.safe_dump(data, explicit_start=True)
     with open(file_path, 'w') as file:
         file.write(vars_data_in_yaml)
         logger.info('Vars file written successfully')

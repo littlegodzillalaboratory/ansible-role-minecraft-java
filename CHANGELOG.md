@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add YAML start marker on generated vars file
+
 ### Changed
 - Clarify downloaded Minecraft server jar file on task names
 - Ensure bin/minecraft_server.jar does not exist prior to symlink creation
