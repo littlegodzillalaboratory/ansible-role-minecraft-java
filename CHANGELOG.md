@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Add YAML start marker on generated vars file
+- Add 1.21.10-rc1, 1.21.9*, 25w[31-37]a versions
 
 ### Changed
 - Clarify downloaded Minecraft server jar file on task names
