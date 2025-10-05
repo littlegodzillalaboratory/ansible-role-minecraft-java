@@ -3,13 +3,13 @@
   ansible.builtin.file:
     path: "{{ mcj_install_dir }}"
     state: directory
-    mode: 0755
+    mode: "0755"
 
 - name: Ensure sub directories existence
   ansible.builtin.file:
     path: "{{ item }}"
     state: directory
-    mode: 0755
+    mode: "0755"
   loop:
     - "{{ mcj_install_dir }}/bin"
     - "{{ mcj_install_dir }}/workspace"
@@ -23,7 +23,7 @@
   ansible.builtin.get_url:
     url: "{{ minecraft_versions[mcj_minecraft_version]['url'] }}"
     dest: "{{ mcj_install_dir }}/bin/server.jar"
-    mode: 0644
+    mode: "0644"
   when: not minecraft_server_version_jar_file.stat.exists
 
 - name: Get the status of downloaded Minecraft Server jar file
@@ -43,7 +43,7 @@
     remote_src: true
     src: "{{ mcj_install_dir }}/bin/server.jar"
     dest: "{{ mcj_install_dir }}/bin/minecraft_server.{{ mcj_minecraft_version }}.jar"
-    mode: 0644
+    mode: "0644"
   when: not minecraft_server_version_jar_file.stat.exists and minecraft_server_jar_file.stat.exists
 
 - name: Delete downloaded Minecraft Server jar file
@@ -78,5 +78,5 @@
     content: |
       java {{ mcj_java_opts }} -jar {{ mcj_install_dir }}/bin/minecraft_server.jar nogui
     dest: "{{ mcj_install_dir }}/bin/start.sh"
-    mode: 0755
+    mode: "0755"
   when: not minecraft_start_script_file.stat.exists
