@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Use MDH as Makefile standard
+
 ## 1.9.0 - 2025-10-04
 ### Added
 - Add YAML start marker on generated vars file
