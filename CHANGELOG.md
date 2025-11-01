@@ -9,9 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Add mcj_server_properties configuration for setting server.properties values
+- Add systemd service support
 
 ### Changed
 - Use MDH as Makefile standard
+
+### Removed
+- Remove start stop aliases
 
 ## 1.9.0 - 2025-10-04
 ### Added

@@ -18,6 +18,8 @@ Add the role to playbook:
       vars:
         mcj_minecraft_version: '1.21'
         mcj_install_dir: /opt/minecraft
+        mcj_id: minecraft-java
+        mcj_user: minecraft
         mcj_java_opts: -Xmx2048M - Xms1024M
         mcj_server_properties:
           motd: "A Minecraft Server managed by Ansible Role Minecraft Java"
@@ -34,16 +36,20 @@ Or alternatively, as a task using import role:
           vars:
             mcj_minecraft_version: '1.21'
             mcj_install_dir: /opt/minecraft
+            mcj_id: minecraft-java
+            mcj_user: minecraft
             mcj_java_opts: -Xmx2048M - Xms1024M
             mcj_server_properties:
               motd: "A Minecraft Server managed by Ansible Role Minecraft Java"
 
-For convenience, add aliases for starting and stopping the server, editing server.properties, and tailing the server log:
+On machines with systemd, a `<mcj_id>` service will be provisioned so you can use systemctl to manage the server.
 
-    alias minecraft-start='cd <mcj_install_dir>/workspace && nohup <mcj_install_dir>/bin/start.sh > /var/log/minecraft/minecraft.log &'
-    alias minecraft-stop='pkill java' # temporary, will have to handle specific java process from minecraft-start PID
-    alias minecraft-conf='vi <mcj_install_dir>/workspace/server.properties'
-    alias minecraft-log='tail -f <mcj_install_dir>/workspace/logs/latest.log'
+    sudo systemctl start <mcj_id>.service
+    sudo systemctl stop <mcj_id>.service
+    sudo systemctl status <mcj_id>.service
+
+    alias <mcj_id>-conf='vi <mcj_install_dir>/workspace/server.properties'
+    alias <mcj_id>-log='tail -f <mcj_install_dir>/workspace/logs/latest.log'
 
 Config
 ------

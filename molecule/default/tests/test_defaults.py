@@ -49,3 +49,19 @@ def test_server_start_script(host):
     assert server_start_script.is_file
     assert server_start_script.mode == 0o755
     assert server_start_script.contains('java -Xmx2048M -Xms1024M -jar /opt/minecraft/bin/minecraft_server.jar nogui')
+
+def test_server_service_file(host):
+
+    server_service_file = host.file('/etc/systemd/system/minecraft-java.service')
+    assert server_service_file.exists
+    assert server_service_file.is_file
+    assert server_service_file.mode == 0o644
+    assert server_service_file.contains('Description=Minecraft Java')
+    assert server_service_file.contains('User=minecraft')
+    assert server_service_file.contains('ExecStart=/opt/minecraft/bin/start.sh')
+
+def test_minecraft_service(host):
+    minecraft_service = host.service('minecraft-java')
+    # Can't test service enabled state due to test running within container
+    # assert minecraft_service.is_enabled
+    assert not minecraft_service.is_running
