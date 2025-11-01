@@ -1,7 +1,7 @@
-<img align="right" src="https://raw.github.com/cliffano/ansible-role-minecraft-java/master/avatar.jpg" alt="Avatar"/>
+<img align="right" src="https://raw.github.com/littlegodzillalaboratory/ansible-role-minecraft-java/main/avatar.jpg" alt="Avatar"/>
 
-[![Build Status](https://github.com/cliffano/ansible-role-minecraft-java/workflows/CI/badge.svg)](https://github.com/cliffano/ansible-role-minecraft-java/actions?query=workflow%3ACI)
-[![Security Status](https://snyk.io/test/github/cliffano/ansible-role-minecraft-java/badge.svg)](https://snyk.io/test/github/cliffano/ansible-role-minecraft-java)
+[![Build Status](https://github.com/littlegodzillalaboratory/ansible-role-minecraft-java/workflows/CI/badge.svg)](https://github.com/littlegodzillalaboratory/ansible-role-minecraft-java/actions?query=workflow%3ACI)
+[![Security Status](https://snyk.io/test/github/littlegodzillalaboratory/ansible-role-minecraft-java/badge.svg)](https://snyk.io/test/github/littlegodzillalaboratory/ansible-role-minecraft-java)
 
 Ansible Role Minecraft Java
 ---------------------------
@@ -25,14 +25,14 @@ Add the role to playbook:
           motd: "A Minecraft Server managed by Ansible Role Minecraft Java"
           
       roles:
-        - cliffano.minecraft-java
+        - littlegodzillalaboratory.minecraft-java
 
 Or alternatively, as a task using import role:
 
       tasks:
 
         - ansible.builtin.import_role:
-            name: cliffano.minecraft-java
+            name: littlegodzillalaboratory.minecraft-java
           vars:
             mcj_minecraft_version: '1.21'
             mcj_install_dir: /opt/minecraft

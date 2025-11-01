@@ -10,9 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Add mcj_server_properties configuration for setting server.properties values
 - Add systemd service support
+- Add noble to supported Ubuntu platform
 
 ### Changed
 - Use MDH as Makefile standard
+- Shift Github ID and Galaxy namespace to littlegodzillalaboratory
 
 ### Removed
 - Remove start stop aliases
