@@ -15,4 +15,5 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - jammy
-        - noble
+        # TODO: re-add noble when ansible-lint is upgraded (unable to use latest due to ansible-compat and molecule limitation)
+        # - noble
