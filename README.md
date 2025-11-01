@@ -19,7 +19,9 @@ Add the role to playbook:
         mcj_minecraft_version: '1.21'
         mcj_install_dir: /opt/minecraft
         mcj_java_opts: -Xmx2048M - Xms1024M
-
+        mcj_server_properties:
+          motd: "A Minecraft Server managed by Ansible Role Minecraft Java"
+          
       roles:
         - cliffano.minecraft-java
 
@@ -33,6 +35,8 @@ Or alternatively, as a task using import role:
             mcj_minecraft_version: '1.21'
             mcj_install_dir: /opt/minecraft
             mcj_java_opts: -Xmx2048M - Xms1024M
+            mcj_server_properties:
+              motd: "A Minecraft Server managed by Ansible Role Minecraft Java"
 
 For convenience, add aliases for starting and stopping the server, editing server.properties, and tailing the server log:
 

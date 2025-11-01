@@ -34,6 +34,14 @@ def test_server_jar_symlink(host):
     assert server_jar_symlink.exists
     assert server_jar_symlink.is_symlink
 
+def test_server_properties_file(host):
+
+    server_properties_file = host.file('/opt/minecraft/workspace/server.properties')
+    assert server_properties_file.exists
+    assert server_properties_file.is_file
+    assert server_properties_file.mode == 0o644
+    assert server_properties_file.contains('motd=A Minecraft Server managed by Ansible Role Minecraft Java')
+
 def test_server_start_script(host):
 
     server_start_script = host.file('/opt/minecraft/bin/start.sh')

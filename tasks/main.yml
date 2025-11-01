@@ -56,7 +56,7 @@
     path: "{{ mcj_install_dir }}/bin/minecraft_server.jar"
   register: minecraft_server_jar_file
 
-- name: Ensure Minecraft Server jar file or symlink does not exist
+- name: "Ensure Minecraft Server jar file or symlink does not exist"
   ansible.builtin.file:
     path: "{{ mcj_install_dir }}/bin/minecraft_server.jar"
     state: absent
@@ -68,12 +68,23 @@
     dest: "{{ mcj_install_dir }}/bin/minecraft_server.jar"
     state: link
 
-- name: Get the status of Minecraft Server start script file
+# Minecraft server would add any missing properties with default values
+# hence it's not necessary to specify all properties in mcj_server_properties.
+- name: "Set Minecraft server configuration values"
+  ansible.builtin.lineinfile:
+    path: "{{ mcj_install_dir }}/workspace/server.properties"
+    regexp: '^{{ item.key }}='
+    line: '{{ item.key }}={{ item.value }}'
+    create: yes
+    mode: "0644"
+  loop: "{{ mcj_server_properties | dict2items }}"
+
+- name: "Get the status of Minecraft Server start script file"
   ansible.builtin.stat:
     path: "{{ mcj_install_dir }}/bin/start.sh"
   register: minecraft_start_script_file
 
-- name: Create Minecraft Server start script
+- name: "Create Minecraft Server start script"
   ansible.builtin.copy:
     content: |
       java {{ mcj_java_opts }} -jar {{ mcj_install_dir }}/bin/minecraft_server.jar nogui

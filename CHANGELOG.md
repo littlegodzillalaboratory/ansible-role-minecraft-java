@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add mcj_server_properties configuration for setting server.properties values
+
 ### Changed
 - Use MDH as Makefile standard
 
