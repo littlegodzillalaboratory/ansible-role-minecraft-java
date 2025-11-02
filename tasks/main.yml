@@ -157,4 +157,3 @@
       - alias: "{{ mcj_id }}-start-log"
         command: "journalctl -u {{ mcj_id }}"
   when: init_system_check.stdout.strip() == "systemd"
-  
