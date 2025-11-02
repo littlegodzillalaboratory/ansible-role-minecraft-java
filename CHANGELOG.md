@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add conf and log utility aliases
 - Add 1.21.10, 25w41a - 25w44a versions
 - Add shebang to start shell script
+- Add mcj_env_path configuration for setting systemd service environment PATH
 
 ### Changed
 - Use MDH as Makefile standard
