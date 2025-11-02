@@ -133,7 +133,7 @@
     state: stopped
   when: init_system_check.stdout.strip() == "systemd"
 
-- name: "Create aliases for Minecraft Server utilities"
+- name: "Create aliases for Minecraft Server generic utilities"
   ansible.builtin.include_role:
     name: ansible-roles.bash_aliases
   vars:
@@ -142,3 +142,17 @@
         command: "vi {{ mcj_install_dir }}/workspace/server.properties"
       - alias: "{{ mcj_id }}-log"
         command: "tail -f {{ mcj_install_dir }}/workspace/logs/latest.log"
+
+- name: "Create aliases for Minecraft Server systemd utilities"
+  ansible.builtin.include_role:
+    name: ansible-roles.bash_aliases
+  vars:
+    bash_aliases:
+      - alias: "{{ mcj_id }}-start"
+        command: "systemctl start {{ mcj_id }}.service"
+      - alias: "{{ mcj_id }}-stop"
+        command: "systemctl stop {{ mcj_id }}.service"
+      - alias: "{{ mcj_id }}-start-log"
+        command: "journalctl -u {{ mcj_id }}"
+  when: init_system_check.stdout.strip() == "systemd"
+  
