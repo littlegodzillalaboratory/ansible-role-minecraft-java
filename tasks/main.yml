@@ -107,7 +107,7 @@
       After=network.target
 
       [Service]
-      ExecStart={{ mcj_install_dir }}/bin/start.sh
+      ExecStart=cd {{ mcj_install_dir }}/workspace/ && {{ mcj_install_dir }}/bin/start.sh
       Environment=PATH={{ mcj_env_path }}
       WorkingDirectory={{ mcj_install_dir }}
       Restart=on-failure
