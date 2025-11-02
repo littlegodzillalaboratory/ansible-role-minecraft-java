@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add systemd service support
 - Add noble to supported Ubuntu platform
 - Add conf and log utility aliases
+- Add 1.21.10, 25w41a - 25w44a versions
 
 ### Changed
 - Use MDH as Makefile standard
