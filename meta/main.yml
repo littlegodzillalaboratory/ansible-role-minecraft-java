@@ -1,5 +1,6 @@
 ---
-dependencies: []
+dependencies:
+  - name: ansible-roles.bash_aliases
 
 galaxy_info:
   namespace: littlegodzillalaboratory

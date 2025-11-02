@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add mcj_server_properties configuration for setting server.properties values
 - Add systemd service support
 - Add noble to supported Ubuntu platform
+- Add conf and log utility aliases
 
 ### Changed
 - Use MDH as Makefile standard

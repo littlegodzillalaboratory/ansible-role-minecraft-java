@@ -65,3 +65,13 @@ def test_minecraft_service(host):
     # Can't test service enabled state due to test running within container
     # assert minecraft_service.is_enabled
     assert not minecraft_service.is_running
+
+def test_aliases(host):
+
+    # TODO: Update file path when test container switches to non-root user
+    aliases_file = host.file('/root/.bash_aliases')
+    assert aliases_file.exists
+    assert aliases_file.is_file
+    assert aliases_file.mode == 0o644
+    assert aliases_file.contains('alias minecraft-java-conf="vi /opt/minecraft/workspace/server.properties"')
+    assert aliases_file.contains('alias minecraft-java-log="tail -f /opt/minecraft/workspace/logs/latest.log"')
