@@ -92,6 +92,7 @@
 - name: "Create Minecraft Server start script"
   ansible.builtin.copy:
     content: |
+      #!/bin/bash
       java {{ mcj_java_opts }} -jar {{ mcj_install_dir }}/bin/minecraft_server.jar nogui
     dest: "{{ mcj_install_dir }}/bin/start.sh"
     mode: "0755"
