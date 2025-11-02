@@ -107,7 +107,7 @@
       After=network.target
 
       [Service]
-      ExecStart=cd {{ mcj_install_dir }}/workspace/ && {{ mcj_install_dir }}/bin/start.sh
+      ExecStart={{ mcj_install_dir }}/bin/start.sh
       Environment=PATH={{ mcj_env_path }}
       WorkingDirectory={{ mcj_install_dir }}
       Restart=on-failure
@@ -149,7 +149,7 @@
   vars:
     bash_aliases:
       - alias: "{{ mcj_id }}-start"
-        command: "systemctl start {{ mcj_id }}.service"
+        command: "cd {{ mcj_install_dir }}/workspace/ && systemctl start {{ mcj_id }}.service"
       - alias: "{{ mcj_id }}-stop"
         command: "systemctl stop {{ mcj_id }}.service"
       - alias: "{{ mcj_id }}-status"
