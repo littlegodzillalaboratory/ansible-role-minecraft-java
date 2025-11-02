@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add mcj_server_properties configuration for setting server.properties values
 - Add systemd service support
 - Add noble to supported Ubuntu platform
-- Add start-log, conf, log utility aliases
+- Add status, start-log, conf, log utility aliases
 - Add 1.21.10, 25w41a - 25w44a versions
 - Add shebang to start shell script
 - Add mcj_env_path configuration for setting systemd service environment PATH

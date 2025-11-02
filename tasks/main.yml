@@ -152,6 +152,8 @@
         command: "systemctl start {{ mcj_id }}.service"
       - alias: "{{ mcj_id }}-stop"
         command: "systemctl stop {{ mcj_id }}.service"
+      - alias: "{{ mcj_id }}-status"
+        command: "systemctl status {{ mcj_id }}.service"
       - alias: "{{ mcj_id }}-start-log"
         command: "journalctl -u {{ mcj_id }}"
   when: init_system_check.stdout.strip() == "systemd"
