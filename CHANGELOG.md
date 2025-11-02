@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Use MDH as Makefile standard
 - Shift Github ID and Galaxy namespace to littlegodzillalaboratory
+- Change molecule config to use role namespace and name instead of workspace
 
 ### Removed
 - Remove start stop aliases
