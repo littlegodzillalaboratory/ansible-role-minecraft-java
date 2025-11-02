@@ -109,7 +109,7 @@
       [Service]
       ExecStart={{ mcj_install_dir }}/bin/start.sh
       Environment=PATH={{ mcj_env_path }}
-      WorkingDirectory={{ mcj_install_dir }}
+      WorkingDirectory={{ mcj_install_dir }}/workspace/
       Restart=on-failure
       RestartSec=10s
       User={{ mcj_user }}
@@ -149,7 +149,7 @@
   vars:
     bash_aliases:
       - alias: "{{ mcj_id }}-start"
-        command: "cd {{ mcj_install_dir }}/workspace/ && systemctl start {{ mcj_id }}.service"
+        command: "systemctl start {{ mcj_id }}.service"
       - alias: "{{ mcj_id }}-stop"
         command: "systemctl stop {{ mcj_id }}.service"
       - alias: "{{ mcj_id }}-status"
