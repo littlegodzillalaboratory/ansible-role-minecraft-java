@@ -81,7 +81,7 @@
 
 - name: "Get the status of Minecraft Server service file"
   ansible.builtin.stat:
-    path: "/etc/systemd/system/{{ mcj_id }}.service"
+    path: "/etc/systemd/system/{{ mcj_install_id }}.service"
   register: minecraft_service_file
 
 - name: "Get the status of Minecraft Server start script file"
@@ -112,11 +112,11 @@
       WorkingDirectory={{ mcj_install_dir }}/workspace/
       Restart=on-failure
       RestartSec=10s
-      User={{ mcj_user }}
+      User={{ mcj_os_user }}
 
       [Install]
       WantedBy=multi-user.target
-    dest: "/etc/systemd/system/{{ mcj_id }}.service"
+    dest: "/etc/systemd/system/{{ mcj_install_id }}.service"
     mode: "0644"
   when: not minecraft_service_file.stat.exists
 
@@ -128,7 +128,7 @@
 - name: "Enable Mincraft Server service with systemd"
   become: yes
   ansible.builtin.systemd:
-    name: "{{ mcj_id }}.service"
+    name: "{{ mcj_install_id }}.service"
     enabled: yes
     state: stopped
   when: init_system_check.stdout.strip() == "systemd"
@@ -147,9 +147,9 @@
     name: ansible-roles.bash_aliases
   vars:
     bash_aliases:
-      - alias: "{{ mcj_id }}-conf"
+      - alias: "{{ mcj_install_id }}-conf"
         command: "vi {{ mcj_install_dir }}/workspace/server.properties"
-      - alias: "{{ mcj_id }}-log"
+      - alias: "{{ mcj_install_id }}-log"
         command: "tail -f {{ mcj_install_dir }}/workspace/logs/latest.log"
 
 - name: "Create aliases for Minecraft Server systemd utilities"
@@ -157,12 +157,12 @@
     name: ansible-roles.bash_aliases
   vars:
     bash_aliases:
-      - alias: "{{ mcj_id }}-start"
-        command: "systemctl start {{ mcj_id }}.service"
-      - alias: "{{ mcj_id }}-stop"
-        command: "systemctl stop {{ mcj_id }}.service"
-      - alias: "{{ mcj_id }}-status"
-        command: "systemctl status {{ mcj_id }}.service"
-      - alias: "{{ mcj_id }}-start-log"
-        command: "journalctl -u {{ mcj_id }}"
+      - alias: "{{ mcj_install_id }}-start"
+        command: "systemctl start {{ mcj_install_id }}.service"
+      - alias: "{{ mcj_install_id }}-stop"
+        command: "systemctl stop {{ mcj_install_id }}.service"
+      - alias: "{{ mcj_install_id }}-status"
+        command: "systemctl status {{ mcj_install_id }}.service"
+      - alias: "{{ mcj_install_id }}-start-log"
+        command: "journalctl -u {{ mcj_install_id }}"
   when: init_system_check.stdout.strip() == "systemd"
