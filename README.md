@@ -46,12 +46,20 @@ Or alternatively, as a task using import role:
 
 On machines with systemd, a `<mcj_install_id>` service will be provisioned so you can use systemctl to manage the server.
 
-    sudo systemctl start <mcj_install_id>.service
-    sudo systemctl stop <mcj_install_id>.service
-    sudo systemctl status <mcj_install_id>.service
+    systemctl start <mcj_install_id>.service
+    systemctl stop <mcj_install_id>.service
+    systemctl status <mcj_install_id>.service
 
-    alias <mcj_install_id>-conf='vi <mcj_install_dir>/workspace/server.properties'
-    alias <mcj_install_id>-log='tail -f <mcj_install_dir>/workspace/logs/latest.log'
+The following aliases are also provisioned to simplify the maintenance of the Minecraft server:
+
+| Alias | Command | Description |
+|-------|---------|-------------|
+| <mcj_install_id>-conf | `vi <mcj_install_dir>/workspace/server.properties` | Open up server.properties using `vi` |
+| <mcj_install_id>-log | `tail -f <mcj_install_dir>/workspace/logs/latest.log` | Tail the latest server log |
+| <mcj_install_id>-start | `systemctl start <mcj_install_id>.service` | Start the server |
+| <mcj_install_id>-stop | `systemctl stop <mcj_install_id>.service` | Stop the server |
+| <mcj_install_id>-status | `systemctl status <mcj_install_id>.service` | Check the status of the server |
+| <mcj_install_id>-start-log | `journalctl -u <mcj_install_id>` | Show the server start log |
 
 Config
 ------
