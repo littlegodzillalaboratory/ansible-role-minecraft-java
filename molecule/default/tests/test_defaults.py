@@ -34,6 +34,14 @@ def test_server_jar_symlink(host):
     assert server_jar_symlink.exists
     assert server_jar_symlink.is_symlink
 
+def test_eula_file(host):
+
+    eula_file = host.file('/opt/minecraft/workspace/eula.txt')
+    assert eula_file.exists
+    assert eula_file.is_file
+    assert eula_file.mode == 0o644
+    assert eula_file.contains('eula=true')
+
 def test_server_properties_file(host):
 
     server_properties_file = host.file('/opt/minecraft/workspace/server.properties')

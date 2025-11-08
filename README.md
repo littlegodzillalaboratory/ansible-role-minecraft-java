@@ -21,6 +21,7 @@ Add the role to playbook:
         mcj_id: minecraft-java
         mcj_user: minecraft
         mcj_java_opts: -Xmx2048M - Xms1024M
+        mcj_eula_accepted: true
         mcj_server_properties:
           motd: "A Minecraft Server managed by Ansible Role Minecraft Java"
           
@@ -39,6 +40,7 @@ Or alternatively, as a task using import role:
             mcj_id: minecraft-java
             mcj_user: minecraft
             mcj_java_opts: -Xmx2048M - Xms1024M
+            mcj_eula_accepted: true
             mcj_server_properties:
               motd: "A Minecraft Server managed by Ansible Role Minecraft Java"
 
@@ -54,15 +56,3 @@ On machines with systemd, a `<mcj_id>` service will be provisioned so you can us
 Config
 ------
 
-When the server is started the very first time, you'll encounter a warning message about EULA:
-
-    [23:06:52] [ServerMain/WARN]: Failed to load eula.txt
-    [23:06:52] [ServerMain/INFO]: You need to agree to the EULA in order to run the server. Go to eula.txt for more info.
-
-Open the configuration file at `<mcj_install_dir>/workspace/server.properties`:
-
-    #By changing the setting below to TRUE you are indicating your agreement to our EULA (https://aka.ms/MinecraftEULA).
-    #Sat Feb 15 23:06:52 UTC 2025
-    eula=false
-
-and then replace `eula=false` with `eula=true`.

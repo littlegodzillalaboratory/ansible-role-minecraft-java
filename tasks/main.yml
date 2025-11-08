@@ -133,6 +133,15 @@
     state: stopped
   when: init_system_check.stdout.strip() == "systemd"
 
+- name: "Accept Minecraft EULA"
+  ansible.builtin.lineinfile:
+    path: "{{ mcj_install_dir }}/workspace/eula.txt"
+    regexp: '^eula=true'
+    line: 'eula=true'
+    create: yes
+    mode: "0644"
+  when: mcj_eula_accepted
+
 - name: "Create aliases for Minecraft Server generic utilities"
   ansible.builtin.include_role:
     name: ansible-roles.bash_aliases
