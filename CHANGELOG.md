@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Rename configuration mcj_id to mcj_install_id
 - Rename mcj_user to mcj_os_user
+- Restructure Molecule files to work with latest Molecule 25.9.0
 
 ## 2.0.0 - 2025-11-02
 ### Added

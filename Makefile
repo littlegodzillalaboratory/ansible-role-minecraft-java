@@ -4,7 +4,7 @@
 ################################################################
 
 # MDH's version number
-MDH_VERSION = 0.10.0
+MDH_VERSION = 0.10.1-pre.0
 
 $(info ################################################################)
 $(info Building Ansible role using MDH:)
@@ -43,7 +43,8 @@ deps-upgrade:
 	$(call python_venv,pip-compile --upgrade)
 
 lint:
-	$(call python_venv,molecule lint)
+	$(call python_venv,ansible-lint -v .)
+	$(call python_venv,yamllint .)
 
 test:
 	$(call python_venv,molecule test)

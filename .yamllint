@@ -3,6 +3,8 @@
 extends: default
 
 ignore: |
+  .ansible/
+  .git/
   .venv/
 
 rules:
