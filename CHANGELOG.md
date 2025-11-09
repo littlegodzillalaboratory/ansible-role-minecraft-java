@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Add mcj_eula_accepted configuration
+- Add 25w45a version
 
 ### Changed
 - Rename configuration mcj_id to mcj_install_id
