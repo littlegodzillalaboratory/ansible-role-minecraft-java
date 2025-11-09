@@ -14,8 +14,14 @@ jobs:
           python-version: '3.14'
       - run: git config --global user.email 'pakkunbot'
       - run: git config --global user.name 'blah+pakkun@cliffano.com'
-      - run: make clean rmdeps deps-upgrade deps
-      - run: make ci
+      - uses: cliffano/command-docker-action@v1.4.0
+        with:
+          command: 'make clean rmdeps deps-upgrade deps'
+          image: cliffano/studio:2.16.0
+      - uses: cliffano/command-docker-action@v1.4.0
+        with:
+          command: 'make ci'
+          image: cliffano/studio:2.16.0
       - run: git commit -am 'Upgrade dependencies to latest versions'
       - uses: ad-m/github-push-action@v1.0.0
         with:
