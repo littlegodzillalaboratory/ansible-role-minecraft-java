@@ -4,7 +4,7 @@
 ################################################################
 
 # MDH's version number
-MDH_VERSION = 0.10.1-pre.0
+MDH_VERSION = 1.0.0
 
 $(info ################################################################)
 $(info Building Ansible role using MDH:)
