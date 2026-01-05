@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add 1.21.11, 1.21.11-pre5, 1.21.11-rc versions
+
 ## 2.3.0 - 2025-12-03
 ### Added
 - Add 1.21.11-pre1, 1.21.11-pre2, 1.21.11-pre3, 1.21.11-pre4, 25w46a versions
