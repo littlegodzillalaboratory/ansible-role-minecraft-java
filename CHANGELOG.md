@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Transition MDH to Cobbler
+
 ## 2.4.0 - 2026-01-05
 ### Added
 - Add 1.21.11, 1.21.11-pre5, 1.21.11-rc versions
