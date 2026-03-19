@@ -79,16 +79,6 @@
     mode: "0644"
   loop: "{{ mcj_server_properties | dict2items }}"
 
-- name: "Get the status of Minecraft Server service file"
-  ansible.builtin.stat:
-    path: "/etc/systemd/system/{{ mcj_install_id }}.service"
-  register: minecraft_service_file
-
-- name: "Get the status of Minecraft Server start script file"
-  ansible.builtin.stat:
-    path: "{{ mcj_install_dir }}/bin/start.sh"
-  register: minecraft_start_script_file
-
 - name: "Create Minecraft Server start script"
   ansible.builtin.copy:
     content: |
@@ -96,7 +86,6 @@
       java {{ mcj_java_opts }} -jar {{ mcj_install_dir }}/bin/minecraft_server.jar nogui
     dest: "{{ mcj_install_dir }}/bin/start.sh"
     mode: "0755"
-  when: not minecraft_start_script_file.stat.exists
 
 - name: "Create Minecraft Server service file"
   become: yes
@@ -118,7 +107,6 @@
       WantedBy=multi-user.target
     dest: "/etc/systemd/system/{{ mcj_install_id }}.service"
     mode: "0644"
-  when: not minecraft_service_file.stat.exists
 
 - name: "Check init system"
   ansible.builtin.command: ps -p 1 -o comm=

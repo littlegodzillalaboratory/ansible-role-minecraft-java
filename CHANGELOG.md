@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Transition MDH to Cobbler
+- Enable facts gathering on Molecule tests
+
+### Fixed
+- Fix server start script and service file update when content is modified
 
 ## 2.4.0 - 2026-01-05
 ### Added
