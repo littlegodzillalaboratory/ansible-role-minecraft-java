@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add 26.1 and 26.1-rc versions
+
 ### Changed
 - Transition MDH to Cobbler
 - Enable facts gathering on Molecule tests
