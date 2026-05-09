@@ -1,15 +1,13 @@
-<img align="right" src="https://raw.github.com/littlegodzillalaboratory/ansible-role-minecraft-java/main/avatar.jpg" alt="Avatar"/>
+![Avatar](avatar.jpg)
 
 [![Build Status](https://github.com/littlegodzillalaboratory/ansible-role-minecraft-java/workflows/CI/badge.svg)](https://github.com/littlegodzillalaboratory/ansible-role-minecraft-java/actions?query=workflow%3ACI)
 [![Security Status](https://snyk.io/test/github/littlegodzillalaboratory/ansible-role-minecraft-java/badge.svg)](https://snyk.io/test/github/littlegodzillalaboratory/ansible-role-minecraft-java)
 
-Ansible Role Minecraft Java
----------------------------
+# Ansible Role Minecraft Java
 
-Ansible role for provisioning [Minecraft Java edition](https://www.minecraft.net/en-us/store/minecraft-java-bedrock-edition-pc) on Linux machine.
+Ansible role for provisioning [Minecraft Java edition](https://www.minecraft.net/en-us/store/minecraft-java-bedrock-edition-pc)
 
-Usage
------
+## Usage
 
 Add the role to playbook:
 
@@ -61,8 +59,7 @@ The following aliases are also provisioned to simplify the maintenance of the Mi
 | <mcj_install_id>-status | `systemctl status <mcj_install_id>.service` | Check the status of the server |
 | <mcj_install_id>-start-log | `journalctl -u <mcj_install_id>` | Show the server start log |
 
-Config
-------
+## Config
 
 | Variable | Description | Default | Example |
 |----------|-------------|---------|---------|
