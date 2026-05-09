@@ -1,0 +1,13 @@
+---
+package_name: minecraft_java
+author: Little Godzilla Laboratory
+generator:
+  component: ansible-role
+  inputs:
+    project_id: minecraft_java
+    project_name: Ansible Role Minecraft Java
+    project_desc: Ansible role for provisioning Minecraft Java
+    author_name: Little Godzilla Laboratory
+    author_email: blah+lgl@cliffano.com
+    github_id: littlegodzillalaboratory
+    github_repo: ansible-role-minecraft-java
