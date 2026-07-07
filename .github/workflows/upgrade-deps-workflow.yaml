@@ -5,7 +5,7 @@ jobs:
   build:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           token: ${{ secrets.LITTLEGODZILLALABORATORY_GITHUB_TOKEN }}
           set-safe-directory: ${{ github.workspace }}
@@ -14,16 +14,10 @@ jobs:
           python-version: '3.14'
       - run: git config --global user.email 'pakkunbot'
       - run: git config --global user.name 'blah+pakkun@cliffano.com'
-      - uses: cliffano/command-docker-action@v1.4.0
-        with:
-          command: 'make clean rmdeps deps-upgrade deps'
-          image: cliffano/studio:2.16.0
-      - uses: cliffano/command-docker-action@v1.4.0
-        with:
-          command: 'make ci'
-          image: cliffano/studio:2.16.0
+      - run: make clean rmdeps deps-upgrade deps
+      - run: make ci
       - run: git commit -am 'Upgrade dependencies to latest versions'
-      - uses: ad-m/github-push-action@v1.0.0
+      - uses: ad-m/github-push-action@v1.3.0
         with:
           tags: false
           github_token: ${{ secrets.LITTLEGODZILLALABORATORY_GITHUB_TOKEN }}

@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+- Upgrade Cobbler to 2.3.0
+
 ## 2.5.0 - 2026-03-27
 ### Added
 - Add 26.1 and 26.1-rc versions

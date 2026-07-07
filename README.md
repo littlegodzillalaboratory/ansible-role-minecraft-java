@@ -1,7 +1,11 @@
+<!-- BEGIN:AVATAR -->
 ![Avatar](avatar.jpg)
+<!-- END:AVATAR -->
 
+<!-- BEGIN:BADGES -->
 [![Build Status](https://github.com/littlegodzillalaboratory/ansible-role-minecraft-java/workflows/CI/badge.svg)](https://github.com/littlegodzillalaboratory/ansible-role-minecraft-java/actions?query=workflow%3ACI)
 [![Security Status](https://snyk.io/test/github/littlegodzillalaboratory/ansible-role-minecraft-java/badge.svg)](https://snyk.io/test/github/littlegodzillalaboratory/ansible-role-minecraft-java)
+<!-- END:BADGES -->
 
 # Ansible Role Minecraft Java
 
@@ -71,3 +75,17 @@ The following aliases are also provisioned to simplify the maintenance of the Mi
 | mcj_java_opts | Server [Java options](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/jvm-options-java-parameters-command-line-environment-variable-list-xms-xmx-memory) | `-Xmx2048M -Xms1024M` | `-Xmx2048M -Xms1024M` |
 | mcj_eula_accepted | Accept the Minecraft [EULA](https://nodecraft.com/support/games/minecraft/general/minecraft-eula) when set to true | `true` | `false` |
 | mcj_server_properties | Minecraft [server properties](https://minecraft.fandom.com/wiki/Server.properties) key-value pairs. | `motd: "A Minecraft Server managed by Ansible Role Minecraft Java"` | `difficulty: normal`<br/>`gamemode: survival`<br/>`hardcore: "false"` |
+
+## Colophon
+
+<!-- BEGIN:DEVELOPERS_GUIDE -->
+[Developer's Guide](https://littlegodzillalaboratory.github.io/developers-guide-ansible.html)
+<!-- END:DEVELOPERS_GUIDE -->
+
+<!-- BEGIN:BUILD_REPORTS -->
+Build reports:
+
+* [Lint report](https://littlegodzillalaboratory.github.io/ansible-role-minecraft-java/lint/ansible-lint.txt)
+* [Test report](https://littlegodzillalaboratory.github.io/ansible-role-minecraft-java/test/molecule.txt)
+
+<!-- END:BUILD_REPORTS -->
