@@ -1,0 +1,183 @@
+
+playbook: /opt/workspace/molecule/default/converge.yml
+
+PLAY [Converge] ****************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [Include workspace] *******************************************************
+included: littlegodzillalaboratory.minecraft_java for localhost
+
+TASK [ansible-roles.bash_aliases : Bash aliases | Add aliases] *****************
+skipping: [localhost] => (item=False)
+skipping: [localhost]
+
+TASK [ansible-roles.bash_aliases : Bash aliases | Add extra] *******************
+skipping: [localhost] => (item=False)
+skipping: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Ensure install directory existence] ***
+changed: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Ensure sub directories existence] ***
+changed: [localhost] => (item=/opt/minecraft/bin)
+changed: [localhost] => (item=/opt/minecraft/workspace)
+
+TASK [littlegodzillalaboratory.minecraft_java : Get the status of Minecraft Server 1.21 jar file] ***
+ok: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Download Minecraft Server jar file] ***
+changed: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Get the status of downloaded Minecraft Server jar file] ***
+ok: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Fail if downloaded Minecraft Server jar file checksum does not match] ***
+skipping: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Copy downloaded Minecraft Server jar file as Minecraft Server 1.21 jar file] ***
+changed: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Delete downloaded Minecraft Server jar file] ***
+changed: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Get the status of Minecraft Server jar file] ***
+ok: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Ensure Minecraft Server jar file or symlink does not exist] ***
+ok: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Create symbolic link for Minecraft Server jar file] ***
+changed: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Set Minecraft server configuration values] ***
+changed: [localhost] => (item={'key': 'motd', 'value': 'A Minecraft Server managed by Ansible Role Minecraft Java'})
+
+TASK [littlegodzillalaboratory.minecraft_java : Create Minecraft Server start script] ***
+changed: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Create Minecraft Server service file] ***
+changed: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Check init system] *************
+ok: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Enable Mincraft Server service with systemd] ***
+skipping: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Accept Minecraft EULA] *********
+changed: [localhost]
+
+TASK [Create aliases for Minecraft Server generic utilities] *******************
+included: ansible-roles.bash_aliases for localhost
+
+TASK [ansible-roles.bash_aliases : Bash aliases | Add aliases] *****************
+changed: [localhost] => (item={'alias': 'minecraft-java-conf', 'command': 'vi /opt/minecraft/workspace/server.properties'})
+changed: [localhost] => (item={'alias': 'minecraft-java-log', 'command': 'tail -f /opt/minecraft/workspace/logs/latest.log'})
+
+TASK [ansible-roles.bash_aliases : Bash aliases | Add extra] *******************
+skipping: [localhost] => (item=False)
+skipping: [localhost]
+
+TASK [Create aliases for Minecraft Server systemd utilities] *******************
+skipping: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=19   changed=11   unreachable=0    failed=0    skipped=6    rescued=0    ignored=0
+
+
+PLAY [Converge] ****************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [Include workspace] *******************************************************
+included: littlegodzillalaboratory.minecraft_java for localhost
+
+TASK [ansible-roles.bash_aliases : Bash aliases | Add aliases] *****************
+skipping: [localhost] => (item=False)
+skipping: [localhost]
+
+TASK [ansible-roles.bash_aliases : Bash aliases | Add extra] *******************
+skipping: [localhost] => (item=False)
+skipping: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Ensure install directory existence] ***
+ok: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Ensure sub directories existence] ***
+ok: [localhost] => (item=/opt/minecraft/bin)
+ok: [localhost] => (item=/opt/minecraft/workspace)
+
+TASK [littlegodzillalaboratory.minecraft_java : Get the status of Minecraft Server 1.21 jar file] ***
+ok: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Download Minecraft Server jar file] ***
+skipping: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Get the status of downloaded Minecraft Server jar file] ***
+skipping: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Fail if downloaded Minecraft Server jar file checksum does not match] ***
+skipping: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Copy downloaded Minecraft Server jar file as Minecraft Server 1.21 jar file] ***
+skipping: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Delete downloaded Minecraft Server jar file] ***
+ok: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Get the status of Minecraft Server jar file] ***
+ok: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Ensure Minecraft Server jar file or symlink does not exist] ***
+skipping: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Create symbolic link for Minecraft Server jar file] ***
+ok: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Set Minecraft server configuration values] ***
+ok: [localhost] => (item={'key': 'motd', 'value': 'A Minecraft Server managed by Ansible Role Minecraft Java'})
+
+TASK [littlegodzillalaboratory.minecraft_java : Create Minecraft Server start script] ***
+ok: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Create Minecraft Server service file] ***
+ok: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Check init system] *************
+ok: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Enable Mincraft Server service with systemd] ***
+skipping: [localhost]
+
+TASK [littlegodzillalaboratory.minecraft_java : Accept Minecraft EULA] *********
+ok: [localhost]
+
+TASK [Create aliases for Minecraft Server generic utilities] *******************
+included: ansible-roles.bash_aliases for localhost
+
+TASK [ansible-roles.bash_aliases : Bash aliases | Add aliases] *****************
+ok: [localhost] => (item={'alias': 'minecraft-java-conf', 'command': 'vi /opt/minecraft/workspace/server.properties'})
+ok: [localhost] => (item={'alias': 'minecraft-java-log', 'command': 'tail -f /opt/minecraft/workspace/logs/latest.log'})
+
+TASK [ansible-roles.bash_aliases : Bash aliases | Add extra] *******************
+skipping: [localhost] => (item=False)
+skipping: [localhost]
+
+TASK [Create aliases for Minecraft Server systemd utilities] *******************
+skipping: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=15   changed=0    unreachable=0    failed=0    skipped=10   rescued=0    ignored=0
+
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.0.2, pluggy-1.6.0
+rootdir: /
+plugins: testinfra-10.2.2
+collected 11 items
+
+tests/test_defaults.py ...........                                       [100%]
+
+============================== 11 passed in 4.95s ==============================
