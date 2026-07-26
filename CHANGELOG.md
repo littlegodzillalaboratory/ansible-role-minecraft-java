@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Add AGENTS.md
+- Add 26.2 and 26.3 versions
 
 ### Changed
 - Upgrade Cobbler to 2.6.0
