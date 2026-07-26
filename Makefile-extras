@@ -1,3 +1,7 @@
+define python_venv
+	. .venv/bin/activate && $(1)
+endef
+
 x-gen-vars-file:
 	$(call python_venv,python3 scripts/gen-vars-file.py)
 
