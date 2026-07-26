@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Upgrade Cobbler to 2.6.0
+- Move generate-vars-file to Makefile-extras
 
 ## 2.5.0 - 2026-03-27
 ### Added

@@ -1,0 +1,4 @@
+x-gen-vars-file:
+	$(call python_venv,python3 scripts/gen-vars-file.py)
+
+.PHONY: x-gen-vars-file
