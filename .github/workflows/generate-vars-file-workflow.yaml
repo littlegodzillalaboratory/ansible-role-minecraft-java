@@ -12,12 +12,8 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.14'
-      - run: git config --global user.email 'pakkunbot'
-      - run: git config --global user.name 'blah+pakkun@cliffano.com'
       - run: make clean deps && make -f Makefile-extras x-gen-vars-file
-      - run: git commit -am 'Generate vars file with latest Minecraft versions'
-      - uses: ad-m/github-push-action@v1.3.0
+      - uses: cliffano/save-changes-action@v2.0.0
         with:
-          tags: false
           github_token: ${{ secrets.LITTLEGODZILLALABORATORY_GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          message: Generate vars file with latest Minecraft versions
