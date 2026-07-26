@@ -3,13 +3,13 @@ name: Upgrade Deps
 on: [workflow_dispatch]
 jobs:
   build:
-    runs-on: ubuntu-26.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
         with:
           token: ${{ secrets.LITTLEGODZILLALABORATORY_GITHUB_TOKEN }}
           set-safe-directory: ${{ github.workspace }}
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.14'
       - run: git config --global user.email 'pakkunbot'
